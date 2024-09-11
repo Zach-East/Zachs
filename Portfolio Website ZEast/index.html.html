@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zach East | Digital Marketing Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Background.Collage.v1.jpg') no-repeat center center/cover;
+            color: #fff;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid var(--accent-color);
+        }
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        section {
+            padding: 100px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .service-card i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        .achievements {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .achievement-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .achievement-item {
+            text-align: center;
+            margin: 20px;
+        }
+        .achievement-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: var(--accent-color);
+            font-size: 36px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .case-studies {
+            background-color: var(--bg-color);
+        }
+        .case-study {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .case-study h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .case-study p {
+            margin-bottom: 15px;
+        }
+        .case-study .results {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .footer-nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-nav a:hover {
+            color: var(--secondary-color);
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Zach East</div>
+          <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#case-studies">Case Studies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-image">
+                    <img src="images/Headshot.v1.jpg" alt="Zach East headshot">
+                </div>
+                <h1>Zach East</h1>
+                <h2>Digital Marketing Specialist & Entrepreneurial Strategist</h2>
+                <a href="#contact" class="btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">My Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="images/Reel.Insights.v1.jpg" alt="Social Media Management">
+                        <h3>Social Media Management</h3>
+                        <p>Expand your reach and drive growth through expert social media strategies.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/Account.ServiceCard.v1.jpg" alt="Advertising Campaigns">
+                        <h3>Advertising Campaigns</h3>
+                        <p>Boost conversions and click-through rates with targeted advertising campaigns.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/Content.Creation.v1.jpg" alt="Content Creation">
+                        <h3>Content Creation</h3>
+                        <p>Develop engaging content that resonates with your target audience and drives interactions.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/Ecom.ServiceCard.v1.jpg" alt="eCommerce Management">
+                        <h3>eCommerce Management</h3>
+                        <p>Optimize your online store and drive sales with effective eCommerce strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements">
+            <div class="container">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievement-list">
+                    <div class="achievement-item">
+                        <div class="achievement-number">200%</div>
+                        <p>Increase in Social Media Reach</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">150%</div>
+                        <p>Boost in Conversion Rates</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">$500k+</div>
+                        <p>eCommerce Sales Driven</p>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-number">100+</div>
+                        <p>Content Creators Managed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="case-studies">
+            <div class="container">
+                <h2 class="section-title">Case Studies</h2>
+                <div class="case-study">
+                    <h3>Revitalizing Social Media Presence for Tech Startup</h3>
+                    <p>A struggling tech startup approached us to boost their social media engagement and brand awareness. We implemented a comprehensive strategy focusing on content creation, community management, and targeted advertising.</p>
+                    <p class="results">Results: 300% increase in follower count, 500% boost in engagement rate, and 50% increase in website traffic from social channels within 6 months.</p>
+                </div>
+                <div class="case-study">
+                    <h3>Scaling eCommerce Sales for Fashion Brand</h3>
+                    <p>An emerging fashion brand sought our expertise to scale their online sales. We optimized their eCommerce platform, implemented a data-driven PPC campaign, and developed a robust email marketing strategy.</p>
+                    <p class="results">Results: 200% increase in online sales, 40% improvement in conversion rate, and 30% growth in average order value within 3 months.</p>
+                </div>
+                <div class="case-study">
+                    <h3>Content Marketing Overhaul for SaaS Company</h3>
+                    <p>A B2B SaaS company struggled with lead generation and thought leadership. We revamped their content marketing strategy, focusing on high-quality blog posts, whitepapers, and webinars tailored to their target audience.</p>
+                    <p class="results">Results: 250% increase in organic traffic, 180% boost in lead generation, and 75% improvement in sales-qualified leads within 9 months.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <form action="send_mail.php" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/SfwZach" target="_blank" aria-label="Instagram">📷</a>
+                    <a href="https://www.snapchat.com/add/izachsnap" target="_blank" aria-label="Snapchat">👻</a>
+                    <a href="https://www.famousbirthdays.com/people/zach-east.html" target="_blank" aria-label="Famous Birthdays">🎂</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+           <nav class="footer-nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#case-studies">Case Studies</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Contact</a>
+</nav>
+            <p>© 2024 Zach East. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

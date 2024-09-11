@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zach East - Digital Marketing Services</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #17a2b8;
+            --text-color: #333;
+            --background-color: #f8f9fa;
+            --white: #ffffff;
+        }
+        body, html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        main {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        .service-details {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .service-details h2 {
+            color: var(--primary-color);
+        }
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Zach East</div>
+            <nav>
+              <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="index.html#case-studies">Case Studies</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+</ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Digital Presence</h1>
+            <p>Unlock the power of strategic digital marketing to grow your brand, engage your audience, and drive results.</p>
+            <a href="#services" class="cta-button">Explore Services</a>
+        </div>
+    </div>
+
+    <main id="services">
+        <div id="social-media-management" class="service-details">
+            <h2>Social Media Management</h2>
+            <p>Our Social Media Management service is designed to elevate your brand's online presence and engage your target audience effectively. We employ data-driven strategies to maximize your social media impact.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Platform-specific content creation and curation</li>
+                <li>Community engagement and reputation management</li>
+                <li>Analytics and performance reporting</li>
+                <li>Social media advertising campaign management</li>
+            </ul>
+            <h3>Example:</h3>
+            <p>For a local coffee shop, we increased Instagram followers by 200% in 3 months through a combination of eye-catching visual content, local hashtag strategies, and engaging stories that showcased the shop's unique atmosphere and specialty drinks.</p>
+        </div>
+
+        <div id="advertising-campaigns" class="service-details">
+            <h2>Advertising Campaigns</h2>
+            <p>Our Advertising Campaigns service focuses on creating and managing targeted campaigns that drive conversions and maximize your return on investment (ROI).</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>PPC campaign management (Google Ads, Bing Ads)</li>
+                <li>Social media advertising (Facebook, Instagram, LinkedIn)</li>
+                <li>Display and retargeting campaigns</li>
+                <li>A/B testing and performance optimization</li>
+            </ul>
+            <h3>Example:</h3>
+            <p>For an e-commerce clothing brand, we developed a multi-channel advertising strategy that included Google Shopping ads and Instagram carousel ads. This campaign resulted in a 150% increase in ROAS (Return on Ad Spend) and a 75% increase in new customer acquisitions over a 6-month period.</p>
+        </div>
+
+        <div id="content-creation" class="service-details">
+            <h2>Content Creation</h2>
+            <p>Our Content Creation service is dedicated to producing high-quality, engaging content that resonates with your target audience and supports your marketing goals.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Blog post writing and SEO optimization</li>
+                <li>Video script creation and storyboarding</li>
+                <li>Infographic design and data visualization</li>
+                <li>eBook and whitepaper development</li>
+            </ul>
+            <h3>Example:</h3>
+            <p>For a B2B software company, we created a series of in-depth blog posts and accompanying infographics explaining complex industry concepts. This content marketing initiative led to a 200% increase in organic traffic and a 50% increase in lead generation through content downloads over a 12-month period.</p>
+        </div>
+
+        <div id="ecommerce-management" class="service-details">
+            <h2>eCommerce Management</h2>
+            <p>Our eCommerce Management service is designed to optimize your online store, improve user experience, and drive sales through effective strategies and tools.</p>
+            <h3>What we offer:</h3>
+            <ul>
+                <li>Store setup and platform optimization (Shopify, WooCommerce, etc.)</li>
+                <li>Product listing and description optimization</li>
+                <li>Shopping feed management for marketplaces (Amazon, eBay)</li>
+                <li>Conversion rate optimization and A/B testing</li>
+            </ul>
+            <h3>Example:</h3>
+            <p>For a handmade jewelry brand, we revamped their Shopify store with improved product photography, optimized product descriptions, and implemented a user-friendly navigation structure. These changes, combined with targeted email marketing campaigns, resulted in a 100% increase in average order value and a 50% reduction in cart abandonment rate within the first quarter after implementation.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zach East. All rights reserved.</p>
+    </footer>
+</body>
+</html>

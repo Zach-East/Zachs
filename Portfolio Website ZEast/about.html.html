@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Zach East</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #e6f3ff;
+        }
+
+        /* Main content padding adjustment to account for fixed navbar */
+        .main-content {
+            padding-top: 60px; /* Adjust based on the height of the navbar */
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        /* New Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #f0f8ff, #e6f3ff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #333;
+        }
+
+        .circle-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 123, 255, 0.3);
+            animation: pulse 4s infinite alternate;
+        }
+
+        .circle:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(2) {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0.5s;
+        }
+
+        .circle:nth-child(3) {
+            width: 60%;
+            height: 60%;
+            top: 20%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        .rotating-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: rotate 20s linear infinite;
+        }
+
+        .rotating-text span {
+            position: absolute;
+            left: 50%;
+            font-size: 1em;
+            transform-origin: 0 300px;
+            color: #007bff;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* About Content Styles */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .about-intro {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-highlight {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-highlight h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 25px;
+            color: #007bff;
+        }
+
+        .skill h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        /* Highlights Section */
+        .highlights-section {
+            background-color: #f0f8ff;
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .professional-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .highlight {
+            text-align: center;
+            flex: 1 1 200px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            color: #007bff;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 60px auto 0;
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-cta {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+<li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#case-studies">Case Studies</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <section class="hero">
+            <div class="circle-container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="rotating-text">
+                    <span style="transform: rotate(0deg);">D</span>
+                    <span style="transform: rotate(20deg);">i</span>
+                    <span style="transform: rotate(40deg);">g</span>
+                    <span style="transform: rotate(60deg);">i</span>
+                    <span style="transform: rotate(80deg);">t</span>
+                    <span style="transform: rotate(100deg);">a</span>
+                    <span style="transform: rotate(120deg);">l</span>
+                    <span style="transform: rotate(140deg);">•</span>
+                    <span style="transform: rotate(160deg);">M</span>
+                    <span style="transform: rotate(180deg);">a</span>
+                    <span style="transform: rotate(200deg);">r</span>
+                    <span style="transform: rotate(220deg);">k</span>
+                    <span style="transform: rotate(240deg);">e</span>
+                    <span style="transform: rotate(260deg);">t</span>
+                    <span style="transform: rotate(280deg);">i</span>
+                    <span style="transform: rotate(300deg);">n</span>
+                    <span style="transform: rotate(320deg);">g</span>
+                    <span style="transform: rotate(340deg);">•</span>
+                </div>
+            </div>
+            <div class="hero-content">
+                <h1>Zach East</h1>
+                <p>Digital Marketing Visionary & Entrepreneurial Strategist</p>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Zach East</h2>
+                <div class="about-content">
+                    <p class="about-intro">In the fast-paced world of digital marketing, Zach East stands as a true pioneer and visionary. At an age when most were just beginning to navigate social media, Zach was already mastering it. His journey in the digital realm began at the remarkably young age of 14, setting the stage for a career defined by innovation and success.</p>
+
+                    <div class="about-highlight">
+                        <h3>Snapchat Sensation</h3>
+                        <p>Zach's ascent to digital stardom was meteoric. He quickly became a sensation on Snapchat, amassing millions of followers and establishing himself as one of the platform's most influential personalities. This early triumph was not mere chance, but a testament to Zach's innate understanding of social dynamics and his ability to create content that resonates deeply with audiences.</p>
+                    </div>
+
+                    <div class="about-highlight">
+                        <h3>Digital Marketing Maven</h3>
+                        <p>Leveraging his unparalleled expertise in social media engagement, Zach expanded his influence across the digital marketing landscape. Today, he is renowned as a Digital Marketing Specialist and Entrepreneurial Strategist par excellence. His comprehensive skill set includes:</p>
+
+                        <div class="skills-container">
+                            <div class="skill">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                                </svg>
+                                <h4>Social Media Management</h4>
+                                <p>Crafting engaging content and building thriving online communities across platforms.</p>
+                            </div>
+                            <div class="skill">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                    <line x1="12" y1="17" x2="12" y2="17"></line>
+                                </svg>
+                                <h4>Brand Strategy</h4>
+                                <p>Helping businesses define and communicate their unique value propositions.</p>
+                            </div>
+                            <div class="skill">
+                                <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                                </svg>
+                                <h4>Content Creation</h4>
+                                <p>Producing compelling media that captures attention and drives engagement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlights-section">
+                        <div class="container">
+                            <div class="professional-highlights">
+                                <div class="highlight">
+                                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="7"></circle>
+                                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                                    </svg>
+                                    <h4>Top Snapchat Influencer</h4>
+                                </div>
+                                <div class="highlight">
+                                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3v18h18"></path>
+                                        <path d="M18.5 18.5l-6-6.5-4 4L2 9.5"></path>
+                                    </svg>
+                                    <h4>500%+ ROI for Clients</h4>
+                                </div>
+                                <div class="highlight">
+                                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <h4>10M+ Audience Reach</h4>
+                                </div>
+                                <div class="highlight">
+                                    <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 12l1.5 1.5L12 7l6.5 6.5L20 12l-8-8-8 8z"></path>
+                                        <path d="M12 22V12"></path>
+                                    </svg>
+                                    <h4>Innovative Campaigns</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-section">
+                        <p class="about-cta">Zach's track record speaks volumes. He has consistently delivered remarkable results, driving exponential growth in social media reach, significantly boosting conversion rates, and generating substantial increases in eCommerce sales. His ability to stay ahead of industry trends and adapt to the ever-changing digital landscape has made him an indispensable asset to businesses seeking to dominate their market.</p>
+                        <a href="#contact" class="btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
